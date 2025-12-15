@@ -1,0 +1,35 @@
+# robots.txt for creativestefan.work
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow admin routes
+Disallow: /*?admin=true
+Disallow: /admin
+
+# Sitemap location
+Sitemap: https://creativestefan.work/sitemap.xml
+
+# Common crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Social media crawlers (for link previews)
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Crawl delay to be respectful (optional)
+Crawl-delay: 1

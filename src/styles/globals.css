@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* Season Mix-TRIAL Font */
+@font-face {
+  font-family: 'Season Mix-TRIAL';
+  src: url('/fonts/SeasonMix-TRIAL-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Season Mix-TRIAL';
+  src: url('/fonts/SeasonMix-TRIAL-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Season Mix-TRIAL';
+  src: url('/fonts/SeasonMix-TRIAL-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  /* Font families */
+  --font-display: 'Season Mix-TRIAL', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  /* Typography sizes */
+  --text-4xl: 48px;
+  --text-3xl: 30px;
+  --text-lg: 16px;
+  --text-base: 14px;
+  --text-xs: 12px;
+  /* The default background color for the application. */
+  --background: rgba(255, 255, 255, 1);
+  /* The default color for elements or text that appears on top of the background. */
+  --foreground: rgba(17, 17, 21, 1);
+  /* The background color for cards, modals, and other containers. */
+  --card: rgba(255, 255, 255, 1);
+  /* The default color for text or elements that appear on top of cards, modals and other background containers. */
+  --card-foreground: rgba(17, 17, 21, 1);
+  /* The background color for dropdowns and tooltips. */
+  --popover: rgba(255, 255, 255, 1);
+  /* The default color for text or elements that appear on top of dropdowns and tooltips. */
+  --popover-foreground: rgba(17, 17, 21, 1);
+  /* The primary color used for buttons, links, and other interactive elements. */
+  --primary: rgba(67, 125, 252, 1);
+  /* The default color for text or elements that appear on top of primary colored elements. */
+  --primary-foreground: rgba(255, 255, 255, 1);
+  /* The secondary color used for secondary(but NOT-DESTRUCTIVE) buttons and interactive elements. */
+  --secondary: rgba(255, 255, 255, 1);
+  /* The default color for text or elements that appear on top of secondary colored elements. */
+  --secondary-foreground: rgba(17, 17, 21, 1);
+  /* The muted color used for less prominent elements, such as disabled buttons or disabled text. */
+  --muted: rgba(39, 39, 42, 0.06);
+  /* The default color for text or elements that appear on top of muted colored elements. */
+  --muted-foreground: rgba(111, 111, 119, 1);
+  /* The accent color used for highlights, links, and other interactive elements. */
+  --accent: rgba(67, 125, 252, 1);
+  /* The default color for text or elements that appear on top of accent colored elements. */
+  --accent-foreground: rgba(255, 255, 255, 1);
+  /* The color used for background in destructive actions, such as delete buttons or error messages. */
+  --destructive: rgba(231, 67, 65, 1);
+  /* The default color for text or elements that appear on top of destructive colored elements. */
+  --destructive-foreground: rgba(255, 255, 255, 1);
+  /* The default border color for elements such as inputs, buttons, and other containers. */
+  --border: rgba(39, 39, 42, 0.1);
+  /* The default background color for input fields once the text has been filled. Should be either transparent or match the input-background. */
+  --input: rgba(255, 255, 255, 1);
+  /* The default background color for input fields, text areas, and other input elements. */
+  --input-background: rgba(39, 39, 42, 0.06);
+  /* The default font weight for semi bold text. */
+  --font-weight-semibold: 600;
+  /* The default font weight for medium text. */
+  --font-weight-medium: 500;
+  /* The default font weight for normal text. */
+  --font-weight-normal: 400;
+  /* The color for focus rings, outlines, and other focus indicators. */
+  --ring: rgba(67, 125, 252, 1);
+  /* Shadow for small elevations, such as cards or modals. */
+  --elevation-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  /* The color for chart elements, such as a bar or line in a chart. */
+  --chart-1: rgba(45, 118, 111, 1);
+  /* The color for another chart element, such as a bar or line in a chart. */
+  --chart-2: rgba(242, 115, 19, 1);
+  /* The color for another chart element, such as a bar or line in a chart. */
+  --chart-3: rgba(101, 160, 253, 1);
+  /* The color for another chart element, such as a bar or line in a chart. */
+  --chart-4: rgba(134, 85, 253, 1);
+  /* The color for another chart element, such as a bar or line in a chart. */
+  --chart-5: rgba(227, 71, 152, 1);
+  /* The default border radius for elements such as buttons, tooltip, and other containers. */
+  --radius: 8px;
+  /* Button specific border radius. */
+  --radius-button: 6px;
+  /* Card specific border radius. */
+  --radius-card: 8px;
+  /* The background color for sidebars, navigation menus, and other persistent elements. */
+  --sidebar: rgba(255, 255, 255, 1);
+  /* The default color for text or elements that appear on top of sidebars, navigation menus, and other persistent elements. */
+  --sidebar-foreground: rgba(17, 17, 21, 1);
+  /* The primary color used for buttons, links, and other interactive elements in sidebars and navigation menus. */
+  --sidebar-primary: rgba(67, 125, 252, 1);
+  /* The default color for text or elements that appear on top of primary colored elements in sidebars and navigation menus. */
+  --sidebar-primary-foreground: rgba(255, 255, 255, 1);
+  /* The accent color used for highlights, links, and other interactive elements in sidebars and navigation menus. */
+  --sidebar-accent: rgba(67, 125, 252, 1);
+  /* The default color for text or elements that appear on top of accent colored elements in sidebars and navigation menus. */
+  --sidebar-accent-foreground: rgba(255, 255, 255, 1);
+  /* The default border color for elements in sidebars and navigation menus. */
+  --sidebar-border: rgba(39, 39, 42, 0.1);
+  /* The default color for focus rings, outlines, and other focus indicators in sidebars and navigation menus. */
+  --sidebar-ring: rgba(67, 125, 252, 1);
+  
+  /* Smooth transitions for theme changes */
+  transition: 
+    background-color 1.2s ease-in-out,
+    color 1.2s ease-in-out;
+}
+
+/* Morning Theme (6 AM - 12 PM) - Light and Fresh */
+.morning {
+  --background: rgba(255, 251, 245, 1); /* Warm off-white */
+  --foreground: rgba(17, 17, 21, 1);
+  --card: rgba(255, 255, 255, 1);
+  --card-foreground: rgba(17, 17, 21, 1);
+  --popover: rgba(255, 255, 255, 1);
+  --popover-foreground: rgba(17, 17, 21, 1);
+  --primary: rgba(255, 147, 51, 1); /* Warm sunrise orange */
+  --primary-foreground: rgba(255, 255, 255, 1);
+  --secondary: rgba(255, 255, 255, 1);
+  --secondary-foreground: rgba(17, 17, 21, 1);
+  --muted: rgba(255, 147, 51, 0.08);
+  --muted-foreground: rgba(111, 111, 119, 1);
+  --accent: rgba(255, 147, 51, 1);
+  --accent-foreground: rgba(255, 255, 255, 1);
+  --destructive: rgba(231, 67, 65, 1);
+  --destructive-foreground: rgba(255, 255, 255, 1);
+  --border: rgba(255, 147, 51, 0.12);
+  --input: rgba(255, 255, 255, 1);
+  --input-background: rgba(255, 147, 51, 0.04);
+  --ring: rgba(255, 147, 51, 1);
+  --elevation-sm: 0px 1px 2px 0px rgba(255, 147, 51, 0.08);
+  --sidebar: rgba(255, 251, 245, 1);
+  --sidebar-foreground: rgba(17, 17, 21, 1);
+  --sidebar-primary: rgba(255, 147, 51, 1);
+  --sidebar-primary-foreground: rgba(255, 255, 255, 1);
+  --sidebar-accent: rgba(255, 147, 51, 1);
+  --sidebar-accent-foreground: rgba(255, 255, 255, 1);
+  --sidebar-border: rgba(255, 147, 51, 0.12);
+  --sidebar-ring: rgba(255, 147, 51, 1);
+}
+
+/* Afternoon Theme (12 PM - 6 PM) - Bright and Clear */
+.afternoon {
+  --background: rgba(250, 250, 250, 1); /* Neutral light background */
+  --foreground: rgba(17, 17, 21, 1);
+  --card: rgba(255, 255, 255, 1);
+  --card-foreground: rgba(17, 17, 21, 1);
+  --popover: rgba(255, 255, 255, 1);
+  --popover-foreground: rgba(17, 17, 21, 1);
+  --primary: rgba(9, 9, 11, 1); /* Zinc-950 */
+  --primary-foreground: rgba(255, 255, 255, 1);
+  --secondary: rgba(255, 255, 255, 1);
+  --secondary-foreground: rgba(17, 17, 21, 1);
+  --muted: rgba(63, 63, 70, 0.08);
+  --muted-foreground: rgba(111, 111, 119, 1);
+  --accent: rgba(9, 9, 11, 1);
+  --accent-foreground: rgba(255, 255, 255, 1);
+  --destructive: rgba(231, 67, 65, 1);
+  --destructive-foreground: rgba(255, 255, 255, 1);
+  --border: rgba(63, 63, 70, 0.12);
+  --input: rgba(255, 255, 255, 1);
+  --input-background: rgba(63, 63, 70, 0.04);
+  --ring: rgba(9, 9, 11, 1);
+  --elevation-sm: 0px 1px 2px 0px rgba(63, 63, 70, 0.08);
+  --sidebar: rgba(250, 250, 250, 1);
+  --sidebar-foreground: rgba(17, 17, 21, 1);
+  --sidebar-primary: rgba(9, 9, 11, 1);
+  --sidebar-primary-foreground: rgba(255, 255, 255, 1);
+  --sidebar-accent: rgba(9, 9, 11, 1);
+  --sidebar-accent-foreground: rgba(255, 255, 255, 1);
+  --sidebar-border: rgba(63, 63, 70, 0.12);
+  --sidebar-ring: rgba(9, 9, 11, 1);
+}
+
+/* Night Theme (6 PM - 6 AM) - Dark and Calm */
+.night {
+  --background: rgba(17, 17, 21, 1);
+  --foreground: rgba(255, 255, 255, 1);
+  --card: rgba(39, 39, 42, 1);
+  --card-foreground: rgba(255, 255, 255, 1);
+  --popover: rgba(39, 39, 42, 1);
+  --popover-foreground: rgba(255, 255, 255, 1);
+  --primary: rgba(134, 85, 253, 1); /* Purple night sky */
+  --primary-foreground: rgba(255, 255, 255, 1);
+  --secondary: rgba(39, 39, 42, 1);
+  --secondary-foreground: rgba(255, 255, 255, 1);
+  --muted: rgba(39, 39, 42, 1);
+  --muted-foreground: rgba(161, 161, 170, 1);
+  --accent: rgba(134, 85, 253, 1);
+  --accent-foreground: rgba(255, 255, 255, 1);
+  --destructive: rgba(239, 68, 68, 1);
+  --destructive-foreground: rgba(255, 255, 255, 1);
+  --border: rgba(63, 63, 70, 1);
+  --input: rgba(39, 39, 42, 1);
+  --input-background: rgba(63, 63, 70, 1);
+  --ring: rgba(134, 85, 253, 1);
+  --elevation-sm: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+  --sidebar: rgba(17, 17, 21, 1);
+  --sidebar-foreground: rgba(255, 255, 255, 1);
+  --sidebar-primary: rgba(134, 85, 253, 1);
+  --sidebar-primary-foreground: rgba(255, 255, 255, 1);
+  --sidebar-accent: rgba(134, 85, 253, 1);
+  --sidebar-accent-foreground: rgba(255, 255, 255, 1);
+  --sidebar-border: rgba(63, 63, 70, 1);
+  --sidebar-ring: rgba(134, 85, 253, 1);
+}
+
+.dark {
+  --background: rgba(17, 17, 21, 1);
+  --foreground: rgba(255, 255, 255, 1);
+  --card: rgba(17, 17, 21, 1);
+  --card-foreground: rgba(255, 255, 255, 1);
+  --popover: rgba(17, 17, 21, 1);
+  --popover-foreground: rgba(255, 255, 255, 1);
+  --primary: rgba(67, 125, 252, 1);
+  --primary-foreground: rgba(255, 255, 255, 1);
+  --secondary: rgba(39, 39, 42, 1);
+  --secondary-foreground: rgba(255, 255, 255, 1);
+  --muted: rgba(39, 39, 42, 1);
+  --muted-foreground: rgba(111, 111, 119, 1);
+  --accent: rgba(67, 125, 252, 1);
+  --accent-foreground: rgba(255, 255, 255, 1);
+  --destructive: rgba(231, 67, 65, 1);
+  --destructive-foreground: rgba(255, 255, 255, 1);
+  --border: rgba(39, 39, 42, 0.3);
+  --input: rgba(39, 39, 42, 1);
+  --input-background: rgba(39, 39, 42, 0.5);
+  --ring: rgba(67, 125, 252, 1);
+  --elevation-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: rgba(45, 118, 111, 1);
+  --chart-2: rgba(242, 115, 19, 1);
+  --chart-3: rgba(101, 160, 253, 1);
+  --chart-4: rgba(134, 85, 253, 1);
+  --chart-5: rgba(227, 71, 152, 1);
+  --sidebar: rgba(17, 17, 21, 1);
+  --sidebar-foreground: rgba(255, 255, 255, 1);
+  --sidebar-primary: rgba(67, 125, 252, 1);
+  --sidebar-primary-foreground: rgba(255, 255, 255, 1);
+  --sidebar-accent: rgba(67, 125, 252, 1);
+  --sidebar-accent-foreground: rgba(255, 255, 255, 1);
+  --sidebar-border: rgba(39, 39, 42, 0.3);
+  --sidebar-ring: rgba(67, 125, 252, 1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-button: var(--radius-button);
+  --radius-card: var(--radius-card);
+  --elevation-sm: var(--elevation-sm);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    scroll-behavior: smooth;
+  }
+
+  html, body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    transition: 
+      background-color 1.2s ease-in-out,
+      color 1.2s ease-in-out,
+      border-color 1.2s ease-in-out;
+    /* Mobile optimization */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Mobile touch optimization */
+  body {
+    overscroll-behavior-y: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Apply smooth transitions to all elements using color variables */
+  * {
+    transition: 
+      background-color 1.2s ease-in-out,
+      color 1.2s ease-in-out,
+      border-color 1.2s ease-in-out,
+      box-shadow 1.2s ease-in-out;
+  }
+  
+  /* Prevent transitions on elements that should change instantly */
+  input, textarea, select, button:active, a:active {
+    transition-duration: 0.15s;
+  }
+  
+  /* Mobile button tap optimization */
+  button, a {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Hide scrollbar for playground */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Elegant fade-in and slide-up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade-in animation for lightbox background */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scale-in animation for lightbox content */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Fade-out animation for lightbox closing */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Scale-out animation for lightbox content closing */
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+/* Shimmer animation for skeleton loading */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
